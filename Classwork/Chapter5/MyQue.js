@@ -102,6 +102,18 @@ function getDancers() {
 function run() {
     getDancers();
     dance();
+    noDancePartner();
 }
 
 run();
+
+
+function noDancePartner() {
+    console.log("\n");
+    if (!females.empty()) {
+        console.log(females.front().name + " is waiting to dance.");
+    }
+    if (!males.empty()) {
+        console.log(males.front().name + " is waiting to dance.");
+    }
+}
