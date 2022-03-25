@@ -72,3 +72,5 @@ function Node(element) {
     cities.remove("Carlisle");
 
     cities.display();
+
+    cities.findPrevious("Pretoria")
