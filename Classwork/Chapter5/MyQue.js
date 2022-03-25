@@ -66,7 +66,6 @@ function getDancers() {
     var names = [];
     for (var idx = 0; idx < dancers.length; idx++) {
         var person = dancers[idx].split(" ")
-        var gender = person[0];
         var firstName = person[1];
         var lastName = person[2];
 
@@ -78,8 +77,7 @@ function getDancers() {
         var sex = person[0];
         var name = names[i];
         if (sex == "F") {
-            var dancer = new Dancer(name, sex);
-            females.enqueue(dancer);
+            females.enqueue(new Dancer(name, sex));
         }
         else {
             males.enqueue(new Dancer(name, sex));
