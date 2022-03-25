@@ -18,7 +18,7 @@ function dispReverse() {
     var currNode = this.head;
     currNode = this.findLast();
     while (!(currNode.previous == null)) {
-        print(currNode.element);
+        console.log(currNode.element);
         currNode = currNode.previous;
     }
 }
@@ -54,7 +54,7 @@ return currNode;
 function display() {
     var currNode = this.head;
     while (!(currNode.next == null)) {
-        print(currNode.next.element);
+        console.log(currNode.next.element);
         currNode = currNode.next;
     }
 }
