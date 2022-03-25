@@ -62,6 +62,19 @@ class Dancer {
 var males = new Queue();
 var females = new Queue();
 
+
+
+function dance() {
+    console.log("The dance partners are: \n");
+    while (!females.empty() && !males.empty()) {
+        person = females.dequeue();
+        console.log("Female dancer is: " + person.name);
+        person = males.dequeue();
+        console.log(" and the male dancer is: " + person.name);
+    }
+    console.log();
+}
+
 function getDancers() {
     var names = [];
     for (var idx = 0; idx < dancers.length; idx++) {
@@ -84,3 +97,11 @@ function getDancers() {
         }
     }
 }
+
+
+function run() {
+    getDancers();
+    dance();
+}
+
+run();
