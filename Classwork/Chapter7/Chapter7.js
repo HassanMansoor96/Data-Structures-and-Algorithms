@@ -25,7 +25,7 @@ function showAll() {
         console.log(key + " -> " + this.datastore[key]);
     }
 }
-*/
+
 
 //Example7-1
 
@@ -50,7 +50,7 @@ function remove(key) {
 }
 
 function showAll() {
-    for (var key in Object.keys(this.datastore)) {
+    for (var key of Object.keys(this.datastore)) {
         console.log(key + " -> " + this.datastore[key]);
     }
 }
@@ -77,7 +77,7 @@ pbook.showAll();
 
 function count() {
     var n = 0;
-    for (var key in Object.keys(this.datastore)) {
+    for (var key of Object.keys(this.datastore)) {
         ++n;
     }
     return n;
@@ -91,10 +91,12 @@ console.log(nums.length); // displays 2
 
 
 function clear() {
-    for (var key in Object.keys(this.datastore)) {
+    for (var key of Object.keys(this.datastore)) {
         delete this.datastore[key];
     }
 }
+
+*/
 
 //Example7-3
 
@@ -123,21 +125,21 @@ function remove(key) {
 }
 
 function showAll() {
-    for (var key in Object.keys(this.datastore)) {
+    for (var key of Object.keys(this.datastore)) {
         console.log(key + " -> " + this.datastore[key]);
     }
 }
 
 function count() {
     var n = 0;
-    for (var key in Object.keys(this.datastore)) {
+    for (var key of Object.keys(this.datastore)) {
         ++n;
     }
     return n;
 }
 
 function clear() {
-    for (var key in Object.keys(this.datastore)) {
+    for (var key of Object.keys(this.datastore)) {
         delete this.datastore[key];
     }
 }
