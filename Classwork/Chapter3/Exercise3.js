@@ -86,6 +86,27 @@ list.add("l") // Will not add to the list and show error
 at least 10 Person objects. Write a function that displays all the people in the list of
 the same gender.*/
 
+class Person {
+    constructor(name, gender) {
+      this.name = name;
+      this.gender = gender;
+    }
+  }
+
+  var list = [
+	{"name": "Felix Wyatt", "gender": "M"},
+	{"name": "Amethyst Lawrence", "gender": "F"},
+	{"name": "Lael Buchanan", "gender": "M"	},
+	{"name": "Oscar Mayo", "gender": "M"	},
+	{"name": "Remedios Vega", "gender": "M"	},
+    {"name": "Megan Fox", "gender": "F"	},
+	{"name": "Jessy Right", "gender": "F"	},
+	{"name": "Rebecca Wong", "gender": "F"	},
+	{"name": "Rose Ryan", "gender": "F"},
+	{"name": "Carlos Black", "gender": "M"}
+];
+
+console.log( list);
 
 
 /*4. Modify the video-rental kiosk program so that when a movie is checked out it is
