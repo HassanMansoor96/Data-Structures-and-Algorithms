@@ -130,7 +130,7 @@ function LinkedList() {
 
 }
 
-function run();
+function run(){
 
 var conga = new LinkedList();
 conga.add('Kitten');
@@ -143,3 +143,4 @@ console.log(conga.removeAt(3));
 console.log(conga.elementAt(3));
 console.log(conga.indexOf('Puppy'));
 console.log(conga.size());
+}
