@@ -2,7 +2,7 @@
 
 
 
-class Dictionary {
+/*class Dictionary {
     constructor() {
         this.datastore = new Array();
     }
@@ -25,7 +25,7 @@ function showAll() {
         console.log(key + " -> " + this.datastore[key]);
     }
 }
-
+*/
 
 //Example7-1
 
@@ -38,6 +38,7 @@ class Dictionary {
         this.showAll = showAll;
     }
 }
+
 function add(key, value) {
     this.datastore[key] = value;
 }
@@ -56,7 +57,7 @@ function showAll() {
 
 //Example 7-2
 
-load("Dictionary.js");
+//load("Dictionary.js");
 
 var pbook = new Dictionary();
 
@@ -69,6 +70,8 @@ console.log("David's extension: " + pbook.find("David"));
 pbook.remove("David");
 
 pbook.showAll();
+
+
 
 //Auxiliary Functions for the Dictionary Class
 
@@ -85,10 +88,7 @@ nums[0] = 1;
 nums[1] = 2;
 console.log(nums.length); // displays 2
 
-var nums = new Array();
-nums[0] = 1;
-nums[1] = 2;
-console.log(nums.length); // displays 2
+
 
 function clear() {
     for (var key in Object.keys(this.datastore)) {
@@ -98,57 +98,57 @@ function clear() {
 
 //Example7-3
 
- class Dictionary {
-     constructor(){
-    this.add = add;
-    this.datastore = new Array();
-    this.find = find;
-    this.remove = remove;
-    this.showAll = showAll;
-    this.count = count;
-    this.clear = clear;
+class Dictionary {
+    constructor() {
+        this.add = add;
+        this.datastore = new Array();
+        this.find = find;
+        this.remove = remove;
+        this.showAll = showAll;
+        this.count = count;
+        this.clear = clear;
     }
 }
 
-    function add(key, value) {
+function add(key, value) {
     this.datastore[key] = value;
-    }
+}
 
-    function find(key) {
+function find(key) {
     return this.datastore[key];
-    }
+}
 
-    function remove(key) {
+function remove(key) {
     delete this.datastore[key];
-    }
+}
 
-    function showAll() {
+function showAll() {
     for (var key in Object.keys(this.datastore)) {
-    console.log(key + " -> " + this.datastore[key]);
+        console.log(key + " -> " + this.datastore[key]);
     }
-    }
+}
 
-    function count() {
+function count() {
     var n = 0;
     for (var key in Object.keys(this.datastore)) {
-    ++n;
+        ++n;
     }
     return n;
-    }
+}
 
-    function clear() {
-    for  (var key in Object.keys(this.datastore)) {
-    delete this.datastore[key];
+function clear() {
+    for (var key in Object.keys(this.datastore)) {
+        delete this.datastore[key];
     }
-    }
+}
 
-    //Example 7-4
+//Example 7-4
 
-   // load("Chapter7.js");
+//load("Chapter7.js");
 
 var pbook = new Dictionary();
 
-pbook.add("Raymond","123");
+pbook.add("Raymond", "123");
 pbook.add("David", "345");
 pbook.add("Cynthia", "456");
 
