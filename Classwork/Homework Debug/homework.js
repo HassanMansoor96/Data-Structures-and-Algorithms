@@ -130,6 +130,8 @@ function LinkedList() {
 
 }
 
+function run();
+
 var conga = new LinkedList();
 conga.add('Kitten');
 conga.add('Puppy');
