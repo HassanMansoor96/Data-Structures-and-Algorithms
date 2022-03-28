@@ -88,7 +88,10 @@ nums[0] = 1;
 nums[1] = 2;
 console.log(nums.length); // displays 2
 
-
+var pbook = new Array();
+pbook["David"] = 1;
+pbook["Jennifer"] = 2;
+console.log(pbook.length); // displays 0
 
 function clear() {
     for (var key of Object.keys(this.datastore)) {
