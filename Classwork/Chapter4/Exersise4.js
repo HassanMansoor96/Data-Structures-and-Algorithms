@@ -36,6 +36,8 @@ function Stack() {
 var newExpression;
 newExpression = (2.3 + 23 / 12 + (3.14159 * .24))
 
+
+
 /*2. A postfix expression evaluator works on arithmetic expressions taking the following
 form:
 op1 op2 operator
