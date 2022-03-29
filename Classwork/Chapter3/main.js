@@ -167,5 +167,7 @@ function displayCustomers(list){
 }
 
 function run(){
-    displayCustomers;
+    console.log(displayCustomers);
 }
+
+run();

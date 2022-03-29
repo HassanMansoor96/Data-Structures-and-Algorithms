@@ -4,7 +4,37 @@ returns the position in the expression where a parenthesis is missing. An exampl
 of an arithmetic expression with unbalanced parentheses is 2.3 + 23 / 12 + (3.14159
 * .24.*/
 
+function Stack() {
+    this.dataStore = [];
+    this.top = 0;
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;
+    this.clear = clear;
+    this.length = length;
+    }
 
+    function push(element) {
+        this.dataStore[this.top++] = element;
+        }
+
+        function peek() {
+        return this.dataStore[this.top-1];
+        }
+
+        function pop() {
+        return this.dataStore[--this.top];
+        }
+
+        function clear() {
+        this.top = 0;
+        }
+
+        function length() {
+        return this.top;
+        }
+var newExpression;
+newExpression = (2.3 + 23 / 12 + (3.14159 * .24))
 
 /*2. A postfix expression evaluator works on arithmetic expressions taking the following
 form:
