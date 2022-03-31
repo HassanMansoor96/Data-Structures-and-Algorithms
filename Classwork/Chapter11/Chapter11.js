@@ -4,8 +4,11 @@ function Graph(v) {
     this.adj = [];
     for (var i = 0; i < this.vertices; ++i) {
         this.adj[i] = [];
-        this.adj[i].push("");
+        // this.adj[i].push("");
     }
+    this.addEdge = addEdge;
+    this.showGraph = showGraph;
+    this.bfs = bfs;
     this.dfs = dfs;
     this.marked = [];
     for (var i = 0; i < this.vertices; ++i) {
@@ -18,6 +21,7 @@ function addEdge(v, w) {
     this.adj[v].push(w);
     this.adj[w].push(v);
     this.edges++;
+
 }
 function showGraph() {
     for (var i = 0; i < this.vertices; ++i) {
