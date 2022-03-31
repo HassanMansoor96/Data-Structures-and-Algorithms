@@ -164,29 +164,29 @@ function run() {
    nums.insert(3);
    nums.insert(99);
    nums.insert(22);
-   /*print("Inorder traversal: ");
+   /*("Inorder traversal: ");
    inOrder(nums.root);
-   print("\n");
-   print("Preorder traversal: ");
+   console.log("\n");
+   console.log("Preorder traversal: ");
    preOrder(nums.root);
-   print("\n");
-   print("Postorder traversal: ");
+   console.log("\n");
+   console.log("Postorder traversal: ");
    postOrder(nums.root);
-   print("\n");
+   console.log("\n");
    var min = nums.getmin();
-   print("The minimum value of the BST is: " + min);
+   console.log("The minimum value of the BST is: " + min);
    var max = nums.getmax();
-   print("The maximum value of the BST is: " + max);
+   console.log("The maximum value of the BST is: " + max);
    inOrder(nums.root);
-   print("\n");
+   console.log("\n");
    putstr("Enter a value to search for: ");
    var value = parseInt(readline());
    var found = nums.find(value);
    if (found != null) {
-      print("Found " + value + " in the BST.");
+      console.log("Found " + value + " in the BST.");
    }
    else {
-      print(value + " was not found in the BST.");
+      console.log(value + " was not found in the BST.");
    }*/
    inOrder(nums.root);
    console.log("\n");

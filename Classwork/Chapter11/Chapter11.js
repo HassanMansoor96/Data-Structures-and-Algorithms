@@ -17,6 +17,7 @@ function Graph(v) {
     this.edgeTo = [];
     this.topSortHelper = topSortHelper;
     this.topSort = topSort;
+    this.vertexList = [];
 }
 function addEdge(v, w) {
     this.adj[v].push(w);
