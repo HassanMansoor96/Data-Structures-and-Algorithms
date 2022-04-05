@@ -42,7 +42,7 @@ function CArray(numElements) {
     }
 
     function run(){
-    var numElements = 100;
+    var numElements = 10;
 var myNums = new CArray(numElements);
 myNums.setData();
 console.log(myNums.toString());
