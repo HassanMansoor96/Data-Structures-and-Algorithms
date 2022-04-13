@@ -2,21 +2,31 @@
 that allows elements to be added and removed from both the front and the back of
 the list. Test your class in a program.*/
 
-function Queue() {
+function Dequeue() {
     this.dataStore = [];
-    this.enqueue = enqueue;
-    this.dequeue = dequeue;
+    this.enqueuePush = enqueuePush;
+    this.dequeueShift = dequeueShift;
+    this.enqueuePop = enqueuePop;
+    this.dequeueUnshift = dequeueUnshift;
     this.front = front;
     this.back = back;
     this.toString = toString;
     this.empty = empty;
 }
-function enqueue(element) {
+function enqueuePush(element) {
     this.dataStore.push(element);
 }
-function dequeue() {
+function dequeueShift() {
     return this.dataStore.shift();
 }
+
+function enqueuePop(element) {
+    this.dataStore.pop(element);
+}
+function dequeueUnshift(element) {
+    return this.dataStore.unshift(element);
+}
+
 function front() {
     return this.dataStore[0];
 }
@@ -38,23 +48,82 @@ function empty() {
         return false;
     }
 }
-function run() {
-    var q = new Queue();
-    q.enqueue("Meredith");
-    q.enqueue("Cynthia");
-    q.enqueue("Jennifer");
-    console.log(q.toString());
-    q.dequeue();
-    console.log(q.toString());
-    console.log("Front of queue: " + q.front());
-    console.log("Back of queue: " + q.back());
-}
-run();
+
+// test program
+var q = new Dequeue();
+q.enqueuePush("Meredith");
+q.enqueuePush("Cynthia");
+q.enqueuePush("Jennifer");
+console.log(q.toString());
+
+// q.enqueuePop();
+// q.enqueuePush("Lilly");
+// q.dequeueShift();
+q.dequeueUnshift("Lilly");
+console.log(q.toString());
 
 /*2. Use the Deque class you created in Example 5-1 to determine if a given word is a
 palindrome.*/
 
+function Dequeue() {
+    this.dataStore = [];
+    this.enqueuePush = enqueuePush;
+    this.dequeueShift = dequeueShift;
+    this.enqueuePop = enqueuePop;
+    this.dequeueUnshift = dequeueUnshift;
+    this.front = front;
+    this.back = back;
+    this.toString = toString;
+    this.empty = empty;
+}
+function enqueuePush(element) {
+    this.dataStore.push(element);
+}
+function dequeueShift() {
+    return this.dataStore.shift();
+}
 
+function enqueuePop(element) {
+    this.dataStore.pop(element);
+}
+function dequeueUnshift(element) {
+    return this.dataStore.unshift(element);
+}
+
+function front() {
+    return this.dataStore[0];
+}
+function back() {
+    return this.dataStore[this.dataStore.length - 1];
+}
+function toString() {
+    var retStr = "";
+    for (var i = 0; i < this.dataStore.length; ++i) {
+        retStr += this.dataStore[i] + "\n";
+    }
+    return retStr;
+}
+function empty() {
+    if (this.dataStore.length == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+// test program
+var q = new Dequeue();
+q.enqueuePush("Meredith");
+q.enqueuePush("Cynthia");
+q.enqueuePush("Jennifer");
+console.log(q.toString());
+
+// q.enqueuePop();
+// q.enqueuePush("Lilly");
+// q.dequeueShift();
+q.dequeueUnshift("Lilly");
+console.log(q.toString());
 
 /*3. Modify the priority queue example from Example 5-5 so that the higher-priority
 elements have higher numbers rather than lower numbers. Test your implementation

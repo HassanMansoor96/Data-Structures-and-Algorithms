@@ -4,14 +4,14 @@ moved n nodes forward in the list.*/
 function Node(element) {
     this.element = element;
     this.next = null;
-    }
-    function LList() {
-        this.head = new Node("head");
-        this.find = find;
-        this.insert = insert;
-        this.remove = remove;
-        this.display = display;
-        }
+}
+function LList() {
+    this.head = new Node("head");
+    this.find = find;
+    this.insert = insert;
+    this.remove = remove;
+    this.display = display;
+}
 
 /*2. Implement the back(n) function so that when executed, the current node is moved
 n spaces backward in the list.*/
@@ -73,16 +73,6 @@ function remove(item) {
     }
 }
 
-// findPrevious is no longer needed
-/*function findPrevious(item) {
-var currNode = this.head;
-while (!(currNode.next == null) &&
-(currNode.next.element != item)) {
-currNode = currNode.next;
-}
-return currNode;
-}*/
-
 function display() {
     var currNode = this.head;
     while (!(currNode.next == null)) {
@@ -106,20 +96,20 @@ function insert(newElement, item) {
     newNode.previous = current;
     current.next = newNode;
 }
-function run(){
-var cities = new LList();
+function run() {
+    var cities = new LList();
 
-cities.insert("Conway", "head");
-cities.insert("Russellville", "Conway");
-cities.insert("Carlisle", "Russellville");
-cities.insert("Alma", "Carlisle");
+    cities.insert("Conway", "head");
+    cities.insert("Russellville", "Conway");
+    cities.insert("Carlisle", "Russellville");
+    cities.insert("Alma", "Carlisle");
 
-cities.display();
-console.log();
-cities.remove("Carlisle");
-cities.display();
-console.log();
-cities.dispReverse();
+    cities.display();
+    console.log();
+    cities.remove("Carlisle");
+    cities.display();
+    console.log();
+    cities.dispReverse();
 }
 run();
 
