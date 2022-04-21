@@ -11,28 +11,29 @@ var cart = [];
 var orders = [];
 var totalOrderAmt = 0;
 
-var coke = new stockItems(1, "coke", 7.5);
-var kit_kat = new stockItems(2, "kit kat", 9.5);
-var bar_one = new stockItems(3, "bar One", 8.5);
-var apple = new stockItems(4, "apple", 2.25);
-var banana = new stockItems(5, "banana", 1.25);
-var twix = new stockItems(6, "twix", 8.25);
-var bread = new stockItems(7, "bread", 15.00);
-var lettuce = new stockItems(8, "lettuce", 9.00);
-var milk = new stockItems(9, "milk", 18.00);
-var chillies = new stockItems(10, "chillies", 4.99);
-stock.push(coke, kit_kat, bar_one, apple, banana, twix, bread, lettuce, milk, chillies);
+var englishBreakfast = new stockItems(1, "englishBreakfast", 75.00);
+var croissants = new stockItems(2, "croissants", 46.00);
+var pinewoodBurger = new stockItems(3, "pinewoodBurger", 38.00);
+var tramezzini = new stockItems(4, "tramezzini", 41.00);
+var heroRolls = new stockItems(5, "heroRolls", 33.00);
+var chickenPasta = new stockItems(6, "chickenPasta", 50.00);
+var napolitanaPasta = new stockItems(7, "napolitanaPasta", 40.00);
+var margherittaPizza = new stockItems(8, "margherittaPizza", 62.00);
+var coffee = new stockItems(9, "coffee", 30.00);
+var giantMuffin = new stockItems(10, "giantMuffin", 24.00);
+stock.push(englishBreakfast, croissants, pinewoodBurger, tramezzini, heroRolls, chickenPasta, napolitanaPasta, margherittaPizza, coffee, giantMuffin);
 
 
 function add_selection(x) {
+    document.getElementById("total").innerHTML = "";
     stock[x].quantity = stock[x].quantity + 1;
     stock[x].total = stock[x].price * stock[x].quantity;
     totalOrderAmt += stock[x].price;
     cart = [];
     for (var i in stock) {
         if (stock[i].quantity > 0) {
-            cart += "<br>" + stock[i].item_name + " x" + stock[i].quantity;
-            }
+            cart.push(stock[i])
+        }
     }
     display_all();
 }
@@ -47,32 +48,43 @@ function subtract_selection(x) {
     cart = [];
     for (var i in stock) {
         if (stock[i].quantity > 0) {
-        cart += "<br>" + stock[i].item_name + " x" + stock[i].quantity;
+            cart.push(stock[i])
         }
     }
     display_all();
-    
+
 }
 
 
-order_number = 1;
-orders = [];
+var order_number = 1;
+var orders = [];
+var checkout_list = [];
 
 function displayTotal() {
-
+    for (i in cart){
+        checkout_list.push("<br>" + cart[i].quantity + "x " + cart[i].item_name + "\t")
+    }
     document.getElementById("total").innerHTML = "ORDER NUMBER: " + order_number + 
-    "<br>Items: " + cart + 
-    "<br/>Total order amount is R" + totalOrderAmt.toFixed(2);
-    orders.push(order_number);
+    "<br>Items:" + checkout_list + "<br/>Total order amount is R" + totalOrderAmt.toFixed(2);
+    orders.push("ORDER NO.: " + order_number + " " + checkout_list + "<br> Total: " + totalOrderAmt + "<br><br>");
+    checkout_list = [];
     order_number += 1;
     cart = [];
     for (i in stock) {
         stock[i].quantity = 0;
         stock[i].total = 0;
+        totalOrderAmt = 0;
     }
     display_all();
 }
 
+
+
+function order_history() {
+    // for (var i in orders) {
+    document.getElementById("total").innerHTML = orders;
+// }
+}
 
 function display_all() {
 
@@ -95,13 +107,13 @@ function display_all() {
     }
 
     myTable += "</table>";
-    myTable += "<br/><br/>Your Shopping Cart Contains:" + cart;
+    myTable += "<br/><br/>Your Shopping Cart Contains: <br/>";
+    for (var i in cart) {
+        myTable += cart[i].quantity + " x " + cart[i].item_name + "<br>";
+    }
     myTable += "<br/><br/><p>Total: " + totalOrderAmt + "</p>";
-    myTable += "<br/><br/><td><button onclick='displayTotal()'>checkout</button></td>";
+    myTable += "<br/><br/><td><button onclick='displayTotal()'> CHECKOUT </button></td>";
+    myTable += "\t<td><button onclick='order_history()'>ORDERS HISTORY</button></td>";
 
-    
     document.getElementById("demo").innerHTML = myTable;
 }
-
-
-console.log(cart);
