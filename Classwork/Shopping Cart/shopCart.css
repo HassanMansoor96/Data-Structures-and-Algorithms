@@ -15,14 +15,23 @@ tr:nth-child(even) {
     background-color: #319f55;
 }
 
-tr:nth-child(odd){
+tr:nth-child(odd) {
     background-color: #319f55;
 }
 
-tr:first-child{
+tr:first-child {
     background-color: rgb(244, 240, 234);
 }
 
 body {
     background-color: rgb(8, 116, 225);
-  }
+    background-image: url('coffee1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+}
+
+h1 {
+    color: rgb(254, 129, 4);
+    text-align: center;
+}

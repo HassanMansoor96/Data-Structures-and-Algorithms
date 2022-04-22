@@ -93,8 +93,8 @@ function display_all() {
     myTable += "<th style='width: 100px; color: red; text-align: right;'>Price</th>";
     myTable += "<th style='width: 100px; color: red; text-align: right;'>Quantity</th>";
     myTable += "<th style='width: 100px; color: red; text-align: right;'>Total</th>";
-    myTable += "<th style='width: 100px; color: red; text-align: right;'>Add</th>";
-    myTable += "<th style='width: 100px; color: red; text-align: right;'>Remove</th>";
+    myTable += "<th style='width: 100px; color: orange; text-align: right;'>Add</th>";
+    myTable += "<th style='width: 100px; color: orange; text-align: right;'>Remove</th>";
 
     for (i = 0; i < stock.length; i++) {
         myTable += "<tr><td style='width: 100px; text-align: right;'>" + stock[i].item_id + "</td>";
