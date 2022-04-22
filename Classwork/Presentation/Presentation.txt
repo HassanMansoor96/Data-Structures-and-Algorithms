@@ -1,0 +1,198 @@
+Problem solving approach
+------------------------
+
+Algorithm: a process/set of steps to accomplish a certain task.
+
+How do you get better at it?
+	1. Devise a plan for solving problems.
+	2. Master common problem solving patterns.
+
+PROBLEM SOLVING:
+ * Understand the problem.
+ * Explore concrete examples.
+ * Break it down.
+ * Solve/Simplify.
+ * Look back and Refactor.
+
+
+STEP 1:	UNDERSTAND THE PROBLEM:
+	Before you start typing away... take a minute to make sure you understand the problem.
+	ask yourself:	- can you restate the problem in your own words? (reword the question to make sure you understand it)
+			- what are the inputs that go into the problem?  
+			- what are the outputs that should come from the solution to the problem?
+			- Can the outputs be determined from the inputs?	(i.e. do you have enough info to solve the problem)
+			- how should you label the important pieces of the data that are a part of the problem?
+
+	EXAMPLE:
+	Write a function that takes two numbers and returns their sum.
+
+			- can you restate the problem in your own words? 
+				"write a function that adds two numbers"
+
+			- what are the inputs that go into the problem?  
+				"what are the numbers... int or floating point....or string?
+				"how large are the numbers?
+				
+			- what are the outputs that should come from the solution to the problem?
+				"must the output be a float, an int, or can it be a string"
+
+			- Can the outputs be determined from the inputs?	(i.e. do you have enough info to solve the problem)
+				"what do you do if the user only supplies one number...?"
+
+			- how should you label the important pieces of the data that are a part of the problem?
+				"what are you going you to call the variables and output? num1, num2, total...etc"
+
+
+(coming up with examples can help you understand the problem better)
+STEP 2: EXPLORE CONCRETE EXAMPLES:
+	- start with simple examples.
+	- progress to more complex examples.
+	- explore examples with empty inputs.
+	- explore examples with invalid inputs.
+
+	EXAMPLE:
+	Write a function which takes in a string and returns counts of each charater in the string.
+	(this is a relatively straight forward problem, but there are many questions, many examples that we could try out and use to learn about the problem)
+	(i want to understand this problem first so i come up with a couple of simple examples to make sure i understand it
+	- So start by writing a simple example:(lets say our function is called charCount	
+		charCount("aabbbccc")	//return {a:2, b:3, c:3}
+		(but already theres a question that i have, which is, should it just return the letters that are in there,
+		 what about the letters that are not there, do we want to include like d:0, e:0)
+		(it would make it simpiliar because we dont have to add in d or e if its already in there because we then just have to increment it)
+		(so thats a question that i would like to clarify)
+	  	...should it include characters that aren't in the string, like ...d:0}
+	
+	- Then ask more complex examples:
+		"My phone number is 011 8234 2020"	- should it count numbers, spaces, capital letters?
+	(These examples are really just another form of understanding the problem better before we tackle it)
+	
+	- Explore examples with empty inputs:
+		charCount("")				- what should you do if the input is an empty string. return {}... null... 0.. error?
+	(This is connected to invalid inputs)	
+	- Explore examples with invalid input:
+		charCount(100)				- what should it return..??? should you convert it to a string..?
+
+
+
+
+
+STEP 3: BREAK IT DOWN:
+	- write down the steps you need to take. It forces you to think about the process, and give you some structure.
+		
+	EXAMPLE:
+	"aabbbccc"
+		
+		//what must it return?
+		{a:2;
+		 b:3;
+		 c:4;
+		 }
+
+
+		function charCount(str) {
+			//make an object
+			//loop over string
+				//if char is letter/number AND is a key in object, add one to count.
+				//if char is letter/number AND NOT in object, add it to object and set count to 1.
+				//if char is not letter/number, don't do anything.
+			//return object
+		}
+
+		
+
+
+
+STEP 4: SOLVE OR SIMPLIFY:
+(Solve the problem if you can, if you can't then do a simplier example then come back to the problem you're stuck on.)
+
+	EXAMPLE: same as above.
+		
+		if you have trouble with looping - try write the code with only one charater (instead of the whole string). try to process it
+		as you would if it were part of the loop... and then come back to the loop and the string array.
+		
+		function charCount(str) {
+			//make this object to return at the end
+			var obj = {};
+			//loop over the string for each character
+			for (var i = 0; i < str.length; i++){
+				var char = str[i].toLowercase()
+				//if char is letter/number AND is a key in object, add one to count.
+				if(obj[char] > 0){
+					obj[char]++;
+				}
+				//if char is letter/number AND NOT in object, add it to object and set count to 1.
+				else{
+					obj[char] = 1;
+				};
+			}
+				//if char is not letter/number, don't do anything.
+			//return object
+			return obj;
+		}
+
+
+
+STEP 5: LOOK BACK AND REFACTOR:
+...see how you can improve your code.
+
+	- can you check the resluts (i.e. does your code work)
+	- can you derive the code differently? (is there a different a way to approach it)
+	- can you understand it at a glance? (does your code make sense... is it understandable)
+	- can you use the method for some other problem? (...maybe something else you are working on)
+	- can you improve the performance?
+	- can you think of other ways to refactor it?
+	- how have other people solved the problem?
+	
+
+	EXAMPLE:
+	instead of....  for(var i = 0; i < arr.length; ++i) {
+	use.....	for (var i of arr) {
+
+
+
+
+
+Greedy Algorithm
+
+
+
+function makeChange(origAmt, coins) {
+    var remainAmt = 0;
+    if (origAmt % .25 < origAmt) {
+    coins[3] = parseInt(origAmt / .25);
+    remainAmt = origAmt % .25;
+    origAmt = remainAmt;
+    }
+    if (origAmt % .1 < origAmt) {
+    coins[2] = parseInt(origAmt / .1);
+    remainAmt = origAmt % .1;
+    origAmt = remainAmt;
+    }
+    if (origAmt % .05 < origAmt) {
+    coins[1] = parseInt(origAmt / .05);
+    remainAmt = origAmt % .05;
+    origAmt = remainAmt;
+    }
+    coins[0] = parseInt(origAmt / .01);
+}
+function showChange(coins) {
+if (coins[3] > 0) {
+console.log("Number of quarters - " + coins[3] + " - " + coins[3] * .25);
+}
+if (coins[2] > 0) {
+console.log("Number of dimes - " + coins[2] + " - " + coins[2] * .10);
+}
+if (coins[1] > 0) {
+console.log("Number of nickels - " + coins[1] + " - " + coins[1] * .05);
+}
+if (coins[0] > 0) {
+console.log("Number of pennies - " + coins[0] + " - " + coins[0] * .01);
+}
+}
+function run(){
+var origAmt = .63; // set original amount to 63 cents
+var coins = []; // create an empty array called coins
+makeChange(origAmt, coins); // function called makeChange
+showChange(coins); // function called showChange
+}
+
